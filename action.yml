@@ -1,0 +1,32 @@
+# action.yml
+name: 'Publish Schema to Postman'
+description: 'Publish OpenAPI3 Schema to Postman'
+inputs:
+  schema-name:
+    description: 'The name of the schema to publish'
+    required: true
+  postman-api-id:
+    description: 'The Postman API ID'
+    required: true
+  postman-api-version-id:
+    description: 'The Postman API Version ID'
+    required: true
+  postman-workspace-id:
+    description: 'The id of the workspace to generate collections to'
+    required: true
+  postman-schema-id:
+    description: 'The id of the workspace to generate collections to'
+    required: true
+  postman-api-key:
+    description: 'The id of the workspace to generate collections to'
+    required: true
+runs:
+  using: 'docker'
+  image: 'Dockerfile'
+  args:
+  - ${{ inputs.schema-name }}
+  - ${{ inputs.postman-api-id }}
+  - ${{ inputs.postman-api-version-id }}
+  - ${{ inputs.postman-workspace-id }}
+  - ${{ inputs.postman-schema-id }}
+  - ${{ inputs.postman-api-key }}
