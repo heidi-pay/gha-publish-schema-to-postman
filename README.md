@@ -17,10 +17,17 @@ Makes the assmption that the schema already exists.
 None
 
 ## Example usage
+
+Generate a schema from your django service:
+
+```
+./manage.py spectacular --file YOUR_SCHEMA_NAME_HERE.yml
+```
+
 ```
 uses: actions/gha-publish-schema-to-postman@v1
 with:
-    schema_name: 'input.yml'
+    schema_name: 'YOUR_SCHEMA_NAME_HERE.yml'
     postman_api_id: 'XXXXXXXX-XXXXX-XXXX-XXXXX-XXXXXXXX'
     postman_api_version_id: 'XXXXXXXX-XXXXX-XXXX-XXXXX-XXXXXXXX'
     postman_workspace_id: 'XXXXXXXX-XXXXX-XXXX-XXXXX-XXXXXXXX'
